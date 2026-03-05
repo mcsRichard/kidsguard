@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KidsGuard – Free Parental Control Chrome Extension</title>
+    <meta name="description"
+        content="KidsGuard is a free, lightweight Chrome extension for parents. Block adult sites, set schedules, enable whitelist mode, and protect settings with a password. No subscription required.">
+    <meta name="keywords"
+        content="parental control chrome extension, website blocker for kids, block adult sites chrome, free parental control, screen time chrome, kids safe browser">
+    <meta property="og:title" content="KidsGuard – Parental Control for Chrome">
+    <meta property="og:description"
+        content="Free Chrome extension to protect your kids online. Block bad sites, set time schedules, and lock settings with a password.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mcsrichard.github.io/kidsguard/">
+    <link rel="icon" href="assets/icon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =================== NAV =================== -->
+    <nav class="nav" id="navbar">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <span class="logo-icon">🛡️</span>
+                <span>KidsGuard</span>
+            </a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            <a href="https://chrome.google.com/webstore" target="_blank" class="btn btn-nav" id="nav-cta">
+                Add to Chrome — Free
+            </a>
+        </div>
+    </nav>
+
+    <!-- =================== HERO =================== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-orb orb1"></div>
+        <div class="hero-bg-orb orb2"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Free Forever · No Account Required
+            </div>
+            <h1 class="hero-title">
+                Keep Your Kids Safe<br>
+                <span class="gradient-text">Online, Effortlessly.</span>
+            </h1>
+            <p class="hero-subtitle">
+                A lightweight Chrome extension that blocks harmful websites, enforces schedules,
+                and locks settings with a parent password. No monthly fees. No app to install.
+            </p>
+            <div class="hero-actions">
+                <a href="https://chrome.google.com/webstore" target="_blank" class="btn btn-primary btn-large"
+                    id="hero-cta">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="10" cy="10" r="9" stroke="white" stroke-width="1.5" />
+                        <circle cx="10" cy="10" r="4" fill="white" />
+                        <path d="M10 1C10 1 14 5 19 10" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                        <path d="M10 1C10 1 6 5 1 10" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                    Add to Chrome — It's Free
+                </a>
+                <a href="#features" class="btn btn-ghost btn-large">
+                    See Features ↓
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <strong>100%</strong>
+                    <span>Free to start</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <strong>MV3</strong>
+                    <span>Latest standard</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <strong>🔒</strong>
+                    <span>Password locked</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="browser-mockup">
+                <div class="browser-bar">
+                    <div class="browser-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <div class="browser-url">🔒 kidsguard.app</div>
+                </div>
+                <div class="extension-popup">
+                    <div class="popup-header">
+                        <div class="popup-logo">
+                            <span>🛡️</span>
+                            <div>
+                                <strong>KidsGuard</strong>
+                                <small>Active &amp; Protecting</small>
+                            </div>
+                        </div>
+                        <div class="status-dot active"></div>
+                    </div>
+                    <div class="popup-body">
+                        <div class="popup-item blocked">
+                            <span>🚫 youtube.com</span>
+                            <span class="tag tag-blocked">Blocked</span>
+                        </div>
+                        <div class="popup-item blocked">
+                            <span>🚫 tiktok.com</span>
+                            <span class="tag tag-blocked">Blocked</span>
+                        </div>
+                        <div class="popup-item allowed">
+                            <span>✅ khan-academy.org</span>
+                            <span class="tag tag-allowed">Allowed</span>
+                        </div>
+                        <div class="popup-lock">
+                            🔐 Settings locked by parent
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== SOCIAL PROOF =================== -->
+    <section class="social-proof">
+        <p class="proof-label">Trusted by parents who want simple, effective protection</p>
+        <div class="proof-pills">
+            <div class="pill">🏠 Home Use</div>
+            <div class="pill">🏫 Schools</div>
+            <div class="pill">📚 E-Learning</div>
+            <div class="pill">🕹️ Gaming Control</div>
+            <div class="pill">📱 Screen Time</div>
+        </div>
+    </section>
+
+    <!-- =================== FEATURES =================== -->
+    <section class="features" id="features">
+        <div class="section-header">
+            <div class="section-tag">Features</div>
+            <h2>Everything a parent needs.<br><span class="gradient-text">Nothing you don't.</span></h2>
+            <p>KidsGuard is purpose-built for parental control — not self-discipline apps repurposed for kids.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card feature-card-large">
+                <div class="feature-icon">🛡️</div>
+                <h3>Blacklist & Whitelist Blocking</h3>
+                <p>Block specific harmful sites, or flip to Whitelist mode to <strong>only allow</strong> a curated set
+                    of safe sites — perfect for young children.</p>
+                <div class="feature-tag-row">
+                    <span class="ftag ftag-free">Free: Blacklist</span>
+                    <span class="ftag ftag-pro">Pro: Whitelist Mode</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⏰</div>
+                <h3>Time Scheduling</h3>
+                <p>Set active block hours (e.g., 3PM–9PM on school nights). Sites are freely accessible outside the
+                    schedule.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔐</div>
+                <h3>Password Protection</h3>
+                <p>All settings are locked behind a parent-only password. Kids cannot modify or bypass the
+                    configuration.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🕵️</div>
+                <h3>Incognito-Proof</h3>
+                <p>Blocking works in Incognito (Private) mode too — a common bypass kids use that most extensions
+                    miss.</p>
+            </div>
+
+            <div class="feature-card feature-card-large">
+                <div class="feature-icon">⚡</div>
+                <h3>One-Click Category Blocking <span class="badge-pro">PRO</span></h3>
+                <p>Block entire categories with a single toggle:</p>
+                <div class="category-chips">
+                    <span class="chip">🔞 Adult Content</span>
+                    <span class="chip">🎮 Online Games</span>
+                    <span class="chip">📱 Social Media</span>
+                </div>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">No need to manually add
+                    thousands of domains — we handle that for you.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🌐</div>
+                <h3>Wildcard Support</h3>
+                <p>Use <code>*.io</code> patterns to block entire TLDs or subdomains in one rule.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">☁️</div>
+                <h3>Cross-Device Sync</h3>
+                <p>Settings are synced via your Google account — works across all your family's Chrome profiles.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== HOW IT WORKS =================== -->
+    <section class="how-it-works">
+        <div class="section-header">
+            <div class="section-tag">Setup</div>
+            <h2>Up and running in <span class="gradient-text">3 minutes</span></h2>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                    <h3>Install from Chrome Web Store</h3>
+                    <p>Click "Add to Chrome" and the extension installs instantly. No account or signup needed.</p>
+                </div>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                    <h3>Set Your Password &amp; Blocklist</h3>
+                    <p>Add sites to block, configure a schedule, and lock settings with your admin password.</p>
+                </div>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                    <h3>Hand the Computer Over</h3>
+                    <p>KidsGuard silently protects in the background. Your kids can't disable or modify it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== PRICING =================== -->
+    <section class="pricing" id="pricing">
+        <div class="section-header">
+            <div class="section-tag">Pricing</div>
+            <h2>Simple, fair pricing.<br><span class="gradient-text">Free to get started.</span></h2>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="plan-header">
+                    <h3>Free</h3>
+                    <div class="plan-price">$0 <span>/ forever</span></div>
+                    <p>Perfect for getting started</p>
+                </div>
+                <ul class="plan-features">
+                    <li class="feat-yes">✅ Block up to 5 domains</li>
+                    <li class="feat-yes">✅ Blacklist mode</li>
+                    <li class="feat-yes">✅ 1 time schedule slot</li>
+                    <li class="feat-yes">✅ Password lock</li>
+                    <li class="feat-yes">✅ Incognito mode blocking</li>
+                    <li class="feat-yes">✅ Cross-device sync</li>
+                    <li class="feat-no">— Whitelist mode</li>
+                    <li class="feat-no">— Category one-click blocking</li>
+                    <li class="feat-no">— Unlimited domains</li>
+                </ul>
+                <a href="https://chrome.google.com/webstore" target="_blank" class="btn btn-outline btn-full"
+                    id="free-cta">
+                    Install for Free
+                </a>
+            </div>
+
+            <div class="pricing-card pricing-card-pro">
+                <div class="plan-badge">Most Popular</div>
+                <div class="plan-header">
+                    <h3>Pro <span class="badge-pro">PRO</span></h3>
+                    <div class="plan-price">Coming Soon</div>
+                    <p>For complete family protection</p>
+                </div>
+                <ul class="plan-features">
+                    <li class="feat-yes">✅ Everything in Free</li>
+                    <li class="feat-yes">✅ <strong>Unlimited domains</strong></li>
+                    <li class="feat-yes">✅ <strong>Whitelist mode</strong></li>
+                    <li class="feat-yes">✅ <strong>Category blocking</strong> (Adult, Games, Social)</li>
+                    <li class="feat-yes">✅ <strong>Multiple schedule slots</strong></li>
+                    <li class="feat-yes">✅ Anti-tamper alerts (Email)</li>
+                    <li class="feat-yes">✅ Priority support</li>
+                </ul>
+                <a href="mailto:yxiaonan@hotmail.com?subject=KidsGuard%20Pro%20Interest"
+                    class="btn btn-primary btn-full" id="pro-cta">
+                    Get Notified at Launch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== FAQ =================== -->
+    <section class="faq" id="faq">
+        <div class="section-header">
+            <div class="section-tag">FAQ</div>
+            <h2>Common questions</h2>
+        </div>
+
+        <div class="faq-list">
+            <details class="faq-item">
+                <summary>Can my child uninstall the extension?</summary>
+                <p>Without enterprise policy, a user can uninstall Chrome extensions. However, all <em>settings</em>
+                    are fully password-protected, so they can't change what's blocked. For advanced tamper-proofing
+                    (including uninstall alerts), see our Pro roadmap.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Does it work in Incognito mode?</summary>
+                <p>Yes. KidsGuard is specifically designed to block sites in Incognito (Private) mode — a common
+                    workaround that most free extensions miss. Just make sure to enable the "Allow in Incognito"
+                    permission after installation.</p>
+            </details>
+            <details class="faq-item">
+                <summary>What are the differences between Blacklist and Whitelist mode?</summary>
+                <p><strong>Blacklist mode</strong> (free): All sites are allowed by default; you manually block
+                    specific harmful ones. <strong>Whitelist mode</strong> (Pro): All sites are blocked by default;
+                    you manually allow only the sites you approve. Whitelist mode is the safest option for young
+                    children.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Is my data private? Does KidsGuard send anything to your servers?</summary>
+                <p>KidsGuard stores all settings locally in your Chrome profile using <code>chrome.storage.sync</code>.
+                    No browsing data, blocked site lists, or personal information is ever sent to our servers. Your
+                    data stays in your Google account.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Can I use this on multiple computers?</summary>
+                <p>Yes. Because settings sync via your Google account, any Chrome profile signed in with the same
+                    account will automatically inherit the blocklist and scheduling rules.</p>
+            </details>
+            <details class="faq-item">
+                <summary>How do wildcards work?</summary>
+                <p>KidsGuard supports <code>*.domain.com</code> wildcards. For example, adding
+                    <code>*.io</code> will block all websites ending in <code>.io</code>. Adding
+                    <code>*.google.com</code> will block all Google subdomains (like maps, drive, etc.) while leaving
+                    google.com itself accessible.
+                </p>
+            </details>
+        </div>
+    </section>
+
+    <!-- =================== CTA BANNER =================== -->
+    <section class="cta-banner">
+        <div class="cta-banner-inner">
+            <h2>Give your family a safer internet today.</h2>
+            <p>Free to install. No account. No credit card. Works in 3 minutes.</p>
+            <a href="https://chrome.google.com/webstore" target="_blank" class="btn btn-primary btn-large"
+                id="bottom-cta">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <circle cx="10" cy="10" r="9" stroke="white" stroke-width="1.5" />
+                    <circle cx="10" cy="10" r="4" fill="white" />
+                    <path d="M10 1C10 1 14 5 19 10" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M10 1C10 1 6 5 1 10" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+                Add KidsGuard to Chrome — Free
+            </a>
+        </div>
+    </section>
+
+    <!-- =================== FOOTER =================== -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="logo-icon">🛡️</span>
+                <span><strong>KidsGuard</strong> © 2026</span>
+            </div>
+            <div class="footer-links">
+                <a href="mailto:yxiaonan@hotmail.com?subject=KidsGuard%20Feedback">Contact &amp; Feedback</a>
+                <a href="https://chrome.google.com/webstore" target="_blank">Chrome Web Store</a>
+                <a href="https://github.com/mcsRichard/kidsguard" target="_blank">GitHub</a>
+            </div>
+            <p class="footer-note">Built with ❤️ for families. KidsGuard is not affiliated with Google.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sticky nav shadow on scroll
+        const nav = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('nav-scrolled', window.scrollY > 20);
+        });
+
+        // FAQ accordion — close others when one opens
+        const details = document.querySelectorAll('.faq-item');
+        details.forEach(d => {
+            d.addEventListener('toggle', () => {
+                if (d.open) {
+                    details.forEach(other => { if (other !== d) other.open = false; });
+                }
+            });
+        });
+
+        // Animate cards on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    observer.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.feature-card, .step, .pricing-card, .faq-item').forEach(el => {
+            el.classList.add('animate-on-scroll');
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
