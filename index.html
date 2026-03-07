@@ -230,6 +230,13 @@
                 <h3>Cross-Device Sync</h3>
                 <p>Settings are synced via your Google account — works across all your family's Chrome profiles.</p>
             </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚠️</div>
+                <h3>Uninstall Alerts</h3>
+                <p>Get an immediate email alert if the extension is uninstalled. Stay informed if protection is
+                    bypassed.</p>
+            </div>
         </div>
     </section>
 
@@ -331,9 +338,17 @@
         <div class="faq-list">
             <details class="faq-item">
                 <summary>Can my child uninstall the extension?</summary>
-                <p>Without enterprise policy, a user can uninstall Chrome extensions. However, all <em>settings</em>
-                    are fully password-protected, so they can't change what's blocked. For advanced tamper-proofing
-                    (including uninstall alerts), see our Pro roadmap.</p>
+                <div class="faq-content">
+                    <p>Technically, any Chrome extension can be uninstalled unless enforced by Enterprise Policy.
+                        However, KidsGuard includes <strong>Uninstall Notifications</strong>:</p>
+                    <ul style="margin-top: 0.5rem; color: var(--text-muted); padding-left: 1.25rem;">
+                        <li><strong>Step 1:</strong> Set your email in the extension settings.</li>
+                        <li><strong>Step 2 (First Time):</strong> You'll receive a confirmation email from
+                            <em>FormSubmit</em>. You <strong>must</strong> click "Confirm" to activate the alerts.</li>
+                        <li><strong>Step 3 (Always):</strong> If the extension is removed, you'll get an instant alert
+                            email: <em>"⚠️ Alert: KidsGuard has been uninstalled"</em>.</li>
+                    </ul>
+                </div>
             </details>
             <details class="faq-item">
                 <summary>Does it work in Incognito mode?</summary>
