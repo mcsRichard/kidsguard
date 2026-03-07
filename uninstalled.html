@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KidsGuard | We're sorry to see you go</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #10b981;
+            --bg: #0f172a;
+            --text: #f1f5f9;
+            --text-muted: #94a3b8;
+            --card: rgba(30, 41, 59, 0.7);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background: var(--card);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3rem;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .success-msg {
+            display: none;
+            color: var(--primary);
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top: 3px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="status">
+            <div class="loading"></div> Sending notification to parent...
+        </div>
+
+        <div id="content" style="display:none; margin-top: 2rem;">
+            <h1>KidsGuard Uninstalled</h1>
+            <p>Thank you for using KidsGuard. An alert has been sent to your parent's email address as configured in the
+                settings.</p>
+            <a href="index.html" style="color: var(--primary); text-decoration: none; font-weight: 600;">Back to
+                Homepage</a>
+        </div>
+
+        <!-- Hidden form for FormSubmit -->
+        <form id="alertForm" action="https://formsubmit.co/ajax/REPLACE_WITH_EMAIL" method="POST" style="display:none;">
+            <input type="hidden" name="_subject" value="⚠️ Alert: KidsGuard has been uninstalled">
+            <input type="hidden" name="message"
+                value="This is an automated alert from KidsGuard. The extension has just been uninstalled from this browser.">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+        </form>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const parentEmail = urlParams.get('email');
+
+        if (parentEmail) {
+            const form = document.getElementById('alertForm');
+            form.action = `https://formsubmit.co/ajax/${parentEmail}`;
+
+            fetch(form.action, {
+                method: "POST",
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            })
+                .then(response => {
+                    document.getElementById('status').style.display = 'none';
+                    document.getElementById('content').style.display = 'block';
+                })
+                .catch(error => {
+                    console.error("Error sending alert:", error);
+                    document.getElementById('status').innerHTML = "Failed to send alert. Please check your internet connection.";
+                });
+        } else {
+            document.getElementById('status').innerHTML = "No parent email configured. Redirecting...";
+            setTimeout(() => window.location.href = 'index.html', 3000);
+        }
+    </script>
+</body>
+
+</html>
