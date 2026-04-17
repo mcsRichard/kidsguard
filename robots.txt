@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block unimportant pages from crawling
+Disallow: /uninstalled.html
+
+# Sitemap location
+Sitemap: https://mcsrichard.github.io/kidsguard/sitemap.xml

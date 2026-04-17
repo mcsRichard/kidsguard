@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
   <url>
     <loc>https://mcsrichard.github.io/kidsguard/</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Blog: How to Block Bloxd.io -->
+  <url>
+    <loc>https://mcsrichard.github.io/kidsguard/blog-how-to-block-bloxd-io.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog: Prevent Parental Control Bypass (v1.4 Security) -->
+  <url>
+    <loc>https://mcsrichard.github.io/kidsguard/blog-prevent-parental-control-bypass.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
