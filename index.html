@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KidsGuard – Free Parental Control Chrome Extension</title>
     <meta name="description"
-        content="KidsGuard is a free, lightweight Chrome extension for parents. Block adult sites, set schedules, enable whitelist mode, and protect settings with a password. No subscription required.">
+        content="KidsGuard is a free Chrome extension for parents. Block harmful sites, set schedules, use temporary 30-min unlock, and protect settings with a tamper-proof password. No account required.">
     <meta name="keywords"
         content="parental control chrome extension, website blocker for kids, block adult sites chrome, free parental control, screen time chrome, kids safe browser">
     <meta property="og:title" content="KidsGuard – Parental Control for Chrome">
     <meta property="og:description"
-        content="Free Chrome extension to protect your kids online. Block bad sites, set time schedules, and lock settings with a password.">
+        content="Free Chrome extension to protect your kids online. Block sites, set schedules, use temporary unlock, and lock settings with a tamper-proof password.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mcsrichard.github.io/kidsguard/">
     <meta property="og:image" content="https://mcsrichard.github.io/kidsguard/assets/icon.png">
@@ -184,8 +184,7 @@
             <div class="feature-card feature-card-large">
                 <div class="feature-icon">🛡️</div>
                 <h3>Blacklist & Whitelist Blocking</h3>
-                <p>Block specific harmful sites, or flip to Whitelist mode to <strong>only allow</strong> a curated set
-                    of safe sites — perfect for young children.</p>
+                <p>Block specific harmful sites, or flip to <strong>Whitelist mode</strong> to allow only a curated set of safe sites — perfect for young children. In both modes, the blocked page clearly shows which domain was stopped and lets an admin grant a temporary exception on the spot.</p>
                 <div class="feature-tag-row">
                     <span class="ftag ftag-free">Free: Blacklist</span>
                     <span class="ftag ftag-pro">Pro: Whitelist Mode</span>
@@ -200,12 +199,24 @@
 
             <div class="feature-card feature-card-large">
                 <div class="feature-icon">🔐</div>
-                <h3>Advanced Tamper-Proof Security <span class="badge-pro" style="background: linear-gradient(to right, #10b981, #14b8a6);">NEW</span></h3>
+                <h3>Advanced Tamper-Proof Security</h3>
                 <p>We've completely overhauled our security engine to prevent tech-savvy kids from bypassing the extension. KidsGuard now features:</p>
                 <ul style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem; padding-left: 1.25rem;">
-                    <li style="margin-bottom: 0.5rem;"><strong>DOM Shielding:</strong> Configuration settings are physically completely removed from the page when locked, making Developer Tools (F12) hacks impossible.</li>
-                    <li style="margin-bottom: 0.5rem;"><strong>SHA-256 Hashing:</strong> Passwords are cryptographically hashed, never stored in plain text.</li>
-                    <li><strong>Email Recovery:</strong> Generate a unique Recovery Code during setup and 1-click email it to yourself so you never lose access.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>DOM Shielding:</strong> Configuration settings are physically removed from the page when locked — Developer Tools (F12) hacks are impossible.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Salted SHA-256 Hashing:</strong> Passwords are cryptographically hashed with a unique salt, never stored in plain text.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Brute-Force Lockout:</strong> 5 failed attempts triggers a 5-minute lockout across all entry points.</li>
+                    <li><strong>Recovery Code:</strong> Generate a unique Recovery Code during setup and 1-click email it to yourself so you never lose access.</li>
+                </ul>
+            </div>
+
+            <div class="feature-card feature-card-large">
+                <div class="feature-icon">🔓</div>
+                <h3>Temporary Site Access <span class="badge-pro" style="background: linear-gradient(to right, #10b981, #14b8a6);">NEW</span></h3>
+                <p>Need to grant a quick supervised exception? When a child hits the blocked page, an admin can enter their password directly there to unlock that specific site for <strong>30 minutes</strong> — without opening Settings.</p>
+                <ul style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem; padding-left: 1.25rem;">
+                    <li style="margin-bottom: 0.5rem;">Works in both Blacklist and Whitelist mode.</li>
+                    <li style="margin-bottom: 0.5rem;">Same brute-force lockout protection applies — wrong guesses lock the form.</li>
+                    <li>Site automatically re-blocks after 30 minutes with no action needed.</li>
                 </ul>
             </div>
 
@@ -232,8 +243,8 @@
 
             <div class="feature-card">
                 <div class="feature-icon">🌐</div>
-                <h3>Wildcard Support</h3>
-                <p>Use <code>*.io</code> patterns to block entire TLDs or subdomains in one rule.</p>
+                <h3>Smart Domain Matching</h3>
+                <p>Use <code>*.io</code> to block an entire TLD, or <code>*.example.com</code> to block all subdomains including the apex. Paste a full URL and KidsGuard automatically extracts the clean domain for you.</p>
             </div>
 
             <div class="feature-card">
@@ -326,7 +337,8 @@
                     <li class="feat-yes">✅ Block up to 5 domains</li>
                     <li class="feat-yes">✅ Blacklist mode</li>
                     <li class="feat-yes">✅ Multiple flexible schedules</li>
-                    <li class="feat-yes">✅ Password lock</li>
+                    <li class="feat-yes">✅ Password lock + brute-force protection</li>
+                    <li class="feat-yes">✅ 30-min temporary unlock</li>
                     <li class="feat-yes">✅ Incognito mode blocking</li>
                     <li class="feat-yes">✅ Cross-device sync</li>
                     <li class="feat-no">— Whitelist mode</li>
@@ -442,12 +454,14 @@
                     account will automatically inherit the blocklist and scheduling rules.</p>
             </details>
             <details class="faq-item">
-                <summary>How do wildcards work?</summary>
-                <p>KidsGuard supports <code>*.domain.com</code> wildcards. For example, adding
-                    <code>*.io</code> will block all websites ending in <code>.io</code>. Adding
-                    <code>*.google.com</code> will block all Google subdomains (like maps, drive, etc.) while leaving
-                    google.com itself accessible.
-                </p>
+                <summary>Can I temporarily allow a blocked site?</summary>
+                <div class="faq-content">
+                    <p>Yes — without opening Settings. When your child hits the KidsGuard blocked page, click <strong>"🔓 Unlock for 30 min"</strong> and enter your admin password. The site becomes accessible for exactly 30 minutes, then automatically re-blocks. The same brute-force lockout applies, so wrong guesses are rate-limited.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary>How do wildcards and domain matching work?</summary>
+                <p>KidsGuard supports <code>*.domain.com</code> wildcards. Adding <code>*.io</code> blocks all <code>.io</code> sites. Adding <code>*.google.com</code> blocks all Google subdomains while leaving <code>google.com</code> itself accessible. You can also paste a full URL (e.g. <code>https://youtube.com/watch?v=abc</code>) and KidsGuard automatically strips it down to just the domain.</p>
             </details>
         </div>
     </section>
