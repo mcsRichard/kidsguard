@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KidsGuard – Free Parental Control Chrome Extension</title>
     <meta name="description"
-        content="KidsGuard is a free Chrome extension for parents. Block harmful sites, set schedules, use temporary 30-min unlock, and protect settings with a tamper-proof password. No account required.">
+        content="KidsGuard is a free Chrome extension for parents. Block harmful sites, set daily time limits, enforce schedules, use temporary 30-min unlock, and protect settings with a tamper-proof password. No account required.">
     <meta name="keywords"
         content="parental control chrome extension, website blocker for kids, block adult sites chrome, free parental control, screen time chrome, kids safe browser">
     <meta property="og:title" content="KidsGuard – Parental Control for Chrome">
@@ -211,12 +211,23 @@
 
             <div class="feature-card feature-card-large">
                 <div class="feature-icon">🔓</div>
-                <h3>Temporary Site Access <span class="badge-pro" style="background: linear-gradient(to right, #10b981, #14b8a6);">NEW</span></h3>
+                <h3>Temporary Site Access</h3>
                 <p>Need to grant a quick supervised exception? When a child hits the blocked page, an admin can enter their password directly there to unlock that specific site for <strong>30 minutes</strong> — without opening Settings.</p>
                 <ul style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem; padding-left: 1.25rem;">
                     <li style="margin-bottom: 0.5rem;">Works in both Blacklist and Whitelist mode.</li>
                     <li style="margin-bottom: 0.5rem;">Same brute-force lockout protection applies — wrong guesses lock the form.</li>
                     <li>Site automatically re-blocks after 30 minutes with no action needed.</li>
+                </ul>
+            </div>
+
+            <div class="feature-card feature-card-large">
+                <div class="feature-icon">⏱️</div>
+                <h3>Daily Time Limits <span class="badge-pro" style="background: linear-gradient(to right, #10b981, #14b8a6);">NEW</span></h3>
+                <p>Set a maximum number of minutes per day for any site — even ones that aren't blocked. When the cap is reached, the site automatically blocks for the rest of the day and resets at midnight.</p>
+                <ul style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem; padding-left: 1.25rem;">
+                    <li style="margin-bottom: 0.5rem;"><strong>80% Warning Notification:</strong> A system notification fires when a site reaches 80% of its daily cap — with exact minutes remaining.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Live Progress Bars:</strong> The popup shows today's usage vs. limit for every site at a glance.</li>
+                    <li><strong>Parent Override:</strong> Temporary unlock still works — grant a supervised exception even after the limit is hit.</li>
                 </ul>
             </div>
 
@@ -273,9 +284,9 @@
             </div>
 
             <div class="feature-card">
-                <div class="feature-icon">📈</div>
-                <h3>Real-time Stats</h3>
-                <p>See exactly how much protection your child is getting with a persistent counter of blocked attempts in the popup.</p>
+                <div class="feature-icon">🔢</div>
+                <h3>Live Block Badge & Stats</h3>
+                <p>Today's block count is always visible on the extension icon — no need to open anything. The popup shows a full breakdown including time limit progress bars for every tracked site.</p>
             </div>
 
             <div class="feature-card">
@@ -339,6 +350,7 @@
                     <li class="feat-yes">✅ Multiple flexible schedules</li>
                     <li class="feat-yes">✅ Password lock + brute-force protection</li>
                     <li class="feat-yes">✅ 30-min temporary unlock</li>
+                    <li class="feat-yes">✅ Daily time limits with 80% warning</li>
                     <li class="feat-yes">✅ Incognito mode blocking</li>
                     <li class="feat-yes">✅ Cross-device sync</li>
                     <li class="feat-no">— Whitelist mode</li>
@@ -457,6 +469,12 @@
                 <summary>Can I temporarily allow a blocked site?</summary>
                 <div class="faq-content">
                     <p>Yes — without opening Settings. When your child hits the KidsGuard blocked page, click <strong>"🔓 Unlock for 30 min"</strong> and enter your admin password. The site becomes accessible for exactly 30 minutes, then automatically re-blocks. The same brute-force lockout applies, so wrong guesses are rate-limited.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary>Can I limit how long my child spends on a specific site each day?</summary>
+                <div class="faq-content">
+                    <p>Yes — with <strong>Daily Time Limits</strong>. Set a minute cap for any site (e.g., youtube.com → 60 min/day). When the limit is hit, the site automatically blocks for the rest of the day and resets at midnight. You'll also receive a system notification when usage reaches 80% of the cap. As a parent, you can still grant a 30-minute temporary exception via the blocked page if needed.</p>
                 </div>
             </details>
             <details class="faq-item">
