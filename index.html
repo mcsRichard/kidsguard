@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KidsGuard – Free Parental Control Chrome Extension</title>
     <meta name="description"
-        content="KidsGuard is a free Chrome extension for parents. Block harmful sites, set daily time limits, enforce schedules, use temporary 30-min unlock, and protect settings with a tamper-proof password. No account required.">
+        content="KidsGuard is a free Chrome extension for parents. Block harmful sites, set daily time limits, enforce schedules, use temporary 30-min unlock, and protect settings with a tamper-proof password. Redesigned tabbed interface — set up in under a minute. No account required.">
     <meta name="keywords"
         content="parental control chrome extension, website blocker for kids, block adult sites chrome, free parental control, screen time chrome, kids safe browser">
     <meta property="og:title" content="KidsGuard – Parental Control for Chrome">
     <meta property="og:description"
-        content="Free Chrome extension to protect your kids online. Block sites, set schedules, use temporary unlock, and lock settings with a tamper-proof password.">
+        content="Free Chrome extension to protect your kids online. Block sites, set schedules, use temporary unlock, and lock settings with a tamper-proof password. Redesigned for effortless setup.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mcsrichard.github.io/kidsguard/">
     <meta property="og:image" content="https://mcsrichard.github.io/kidsguard/assets/icon.png">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="KidsGuard – Free Parental Control Chrome Extension">
-    <meta name="twitter:description" content="Block harmful sites, enforce schedules, and lock settings with a password. Free Chrome extension for parents.">
+    <meta name="twitter:description" content="Block harmful sites, enforce schedules, and lock settings with a password. Free Chrome extension for parents. New tabbed interface makes setup effortless.">
     <link rel="canonical" href="https://mcsrichard.github.io/kidsguard/">
     <link rel="sitemap" type="application/xml" href="/kidsguard/sitemap.xml">
     <link rel="icon" href="assets/icon.png" type="image/png">
@@ -38,7 +38,7 @@
         "price": "0",
         "priceCurrency": "USD"
       },
-      "description": "KidsGuard is a free, lightweight Chrome extension for parents. Block adult sites, set schedules, and protect settings with a password.",
+      "description": "KidsGuard is a free, lightweight Chrome extension for parents. Block harmful sites, set schedules and daily time limits, and protect settings with a tamper-proof password. Redesigned tabbed interface makes setup effortless.",
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5",
@@ -77,7 +77,7 @@
         <div class="hero-content">
             <div class="hero-badge">
                 <span class="badge-dot"></span>
-                Free Forever · No Account Required
+                v1.7.0 — Redesigned Interface · Free Forever
             </div>
             <h1 class="hero-title">
                 Keep Your Kids Safe<br>
@@ -85,7 +85,8 @@
             </h1>
             <p class="hero-subtitle">
                 A lightweight Chrome extension that blocks harmful websites, enforces schedules,
-                and locks settings with a parent password. No monthly fees. No app to install.
+                and locks settings with a parent password. Set up in under a minute with our guided wizard.
+                No monthly fees. No app to install.
             </p>
             <div class="hero-actions">
                 <a href="https://chromewebstore.google.com/detail/kidsguard-parental-contro/gaooofmcgnnkhogbokecnledmpgdfkip"
@@ -109,8 +110,8 @@
                 </div>
                 <div class="stat-divider"></div>
                 <div class="stat">
-                    <strong>MV3</strong>
-                    <span>Latest standard</span>
+                    <strong>&lt; 1 min</strong>
+                    <span>Setup time</span>
                 </div>
                 <div class="stat-divider"></div>
                 <div class="stat">
@@ -125,7 +126,7 @@
                     <div class="browser-dots">
                         <span></span><span></span><span></span>
                     </div>
-                    <div class="browser-url">🔒 kidsguard.app</div>
+                    <div class="browser-url">🔒 kidsguard settings</div>
                 </div>
                 <div class="extension-popup">
                     <div class="popup-header">
@@ -137,6 +138,12 @@
                             </div>
                         </div>
                         <div class="status-dot active"></div>
+                    </div>
+                    <div class="popup-tabs-mock">
+                        <span class="ptab-mock ptab-active">📊 Overview</span>
+                        <span class="ptab-mock">🛡️ Rules</span>
+                        <span class="ptab-mock">⏰ Schedule</span>
+                        <span class="ptab-mock">⚙️</span>
                     </div>
                     <div class="popup-body">
                         <div class="popup-item blocked">
@@ -181,6 +188,33 @@
         </div>
 
         <div class="features-grid">
+
+            <!-- v1.7.0 HEADLINE FEATURE -->
+            <div class="feature-card feature-card-large" style="border-color: rgba(16,185,129,0.4); background: rgba(16,185,129,0.05);">
+                <div class="feature-icon">🗂️</div>
+                <h3>Redesigned Interface <span class="badge-new">NEW in 1.7</span></h3>
+                <p>The settings page is completely reorganised into <strong>4 clear tabs</strong> so you always know where to look — no more scrolling through a long, confusing page.</p>
+                <div class="tab-showcase">
+                    <div class="tab-pill tab-pill-active">📊 Overview</div>
+                    <div class="tab-pill">🛡️ Rules</div>
+                    <div class="tab-pill">⏰ Schedule</div>
+                    <div class="tab-pill">⚙️ Settings</div>
+                </div>
+                <ul style="margin-top: 1.25rem; color: var(--text-muted); font-size: 0.9rem; padding-left: 1.25rem;">
+                    <li style="margin-bottom: 0.5rem;"><strong>Overview tab:</strong> At-a-glance dashboard — current mode, active schedules, domain count, and your 7-day activity chart on one screen.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Rules tab:</strong> All blocking settings in one place — mode, one-click categories, custom domains, and daily time limits.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Schedule tab:</strong> Dedicated space to manage your blocking windows and day selections.</li>
+                    <li><strong>Settings tab:</strong> Password, advanced controls, and alerts — clearly separated from your daily-use controls.</li>
+                </ul>
+            </div>
+
+            <!-- WIZARD -->
+            <div class="feature-card">
+                <div class="feature-icon">🧭</div>
+                <h3>First-Time Setup Wizard <span class="badge-new">NEW in 1.7</span></h3>
+                <p>New users are greeted with a guided one-minute setup — pick what to block with a single tap and start protecting immediately. No manual configuration needed.</p>
+            </div>
+
             <div class="feature-card feature-card-large">
                 <div class="feature-icon">🛡️</div>
                 <h3>Blacklist & Whitelist Blocking</h3>
@@ -194,7 +228,7 @@
             <div class="feature-card">
                 <div class="feature-icon">⏰</div>
                 <h3>Flexible Scheduling</h3>
-                <p>Create multiple active block periods and choose specific days of the week (e.g., Mon-Fri 8AM–3PM for school, and 9PM–7AM everyday for bedtime).</p>
+                <p>Create multiple active block periods and choose specific days of the week — e.g., Mon–Fri 8AM–3PM for school hours, and 9PM–7AM every day for bedtime.</p>
             </div>
 
             <div class="feature-card feature-card-large">
@@ -222,7 +256,7 @@
 
             <div class="feature-card feature-card-large">
                 <div class="feature-icon">⏱️</div>
-                <h3>Daily Time Limits <span class="badge-pro" style="background: linear-gradient(to right, #10b981, #14b8a6);">NEW</span></h3>
+                <h3>Daily Time Limits</h3>
                 <p>Set a maximum number of minutes per day for any site — even ones that aren't blocked. When the cap is reached, the site automatically blocks for the rest of the day and resets at midnight.</p>
                 <ul style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem; padding-left: 1.25rem;">
                     <li style="margin-bottom: 0.5rem;"><strong>80% Warning Notification:</strong> A system notification fires when a site reaches 80% of its daily cap — with exact minutes remaining.</li>
@@ -234,8 +268,7 @@
             <div class="feature-card">
                 <div class="feature-icon">🕵️</div>
                 <h3>Incognito-Proof</h3>
-                <p>Blocking works in Incognito (Private) mode too — a common bypass kids use that most extensions
-                    miss.</p>
+                <p>Blocking works in Incognito (Private) mode too — a common bypass kids use that most extensions miss.</p>
             </div>
 
             <div class="feature-card feature-card-large">
@@ -245,30 +278,28 @@
                 <div class="category-chips">
                     <span class="chip">🔞 Adult Content</span>
                     <span class="chip">🎮 Online Games</span>
-                    <span class="chip">🎮🚫 Bloxd.io (New)</span>
+                    <span class="chip">🎮🚫 Bloxd.io</span>
                     <span class="chip">📱 Social Media</span>
                 </div>
-                <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">No need to manually add
-                    thousands of domains — we handle that for you.</p>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">No need to manually add thousands of domains — we handle that for you.</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">🌐</div>
                 <h3>Smart Domain Matching</h3>
-                <p>Use <code>*.io</code> to block an entire TLD, or <code>*.example.com</code> to block all subdomains including the apex. Paste a full URL and KidsGuard automatically extracts the clean domain for you.</p>
+                <p>Use <code>*.io</code> to block an entire TLD, or <code>*.example.com</code> to block all subdomains including the apex. Paste a full URL and KidsGuard automatically extracts the clean domain.</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">☁️</div>
                 <h3>Cross-Device Sync</h3>
-                <p>Settings are synced via your Google account — works across all your family's Chrome profiles.</p>
+                <p>Settings are synced via your Google account — works across all your family's Chrome profiles automatically.</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">⚠️</div>
                 <h3>Uninstall Alerts</h3>
-                <p>Get an immediate email alert if the extension is uninstalled. Stay informed if protection is
-                    bypassed.</p>
+                <p>Get an immediate email alert if the extension is uninstalled. Stay informed if protection is bypassed.</p>
             </div>
 
             <div class="feature-card">
@@ -280,7 +311,7 @@
             <div class="feature-card">
                 <div class="feature-icon">📊</div>
                 <h3>Weekly Activity Reports</h3>
-                <p>Visualize blocking trends with a high-fidelity bar chart showing the last 7 days of protection right in your settings.</p>
+                <p>Visualize blocking trends with a high-fidelity bar chart showing the last 7 days of protection — right on the Overview dashboard.</p>
             </div>
 
             <div class="feature-card">
@@ -294,6 +325,7 @@
                 <h3>SafeSearch Enforcement</h3>
                 <p>Automatically force "Strict" results on Google, Bing, and DuckDuckGo. Filter out explicit images and videos at the root.</p>
             </div>
+
         </div>
     </section>
 
@@ -301,7 +333,7 @@
     <section class="how-it-works">
         <div class="section-header">
             <div class="section-tag">Setup</div>
-            <h2>Up and running in <span class="gradient-text">3 minutes</span></h2>
+            <h2>Up and running in <span class="gradient-text">under a minute</span></h2>
         </div>
         <div class="steps">
             <div class="step">
@@ -315,8 +347,8 @@
             <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-content">
-                    <h3>Set Your Password &amp; Blocklist</h3>
-                    <p>Add sites to block, configure a schedule, and lock settings with your admin password.</p>
+                    <h3>Follow the Setup Wizard</h3>
+                    <p>A guided wizard walks you through picking what to block in seconds. Then set a password in the Settings tab to lock everything down.</p>
                 </div>
             </div>
             <div class="step-arrow">→</div>
@@ -353,6 +385,7 @@
                     <li class="feat-yes">✅ Daily time limits with 80% warning</li>
                     <li class="feat-yes">✅ Incognito mode blocking</li>
                     <li class="feat-yes">✅ Cross-device sync</li>
+                    <li class="feat-yes">✅ Tabbed interface + setup wizard</li>
                     <li class="feat-no">— Whitelist mode</li>
                     <li class="feat-no">— Category one-click blocking</li>
                     <li class="feat-no">— Unlimited domains</li>
@@ -427,12 +460,25 @@
 
         <div class="faq-list">
             <details class="faq-item">
+                <summary>Where are my settings? I see tabs now.</summary>
+                <div class="faq-content">
+                    <p>KidsGuard v1.7.0 reorganised the settings page into <strong>4 tabs</strong> to make everything easier to find:</p>
+                    <ul style="margin-top: 0.5rem; color: var(--text-muted); padding-left: 1.25rem;">
+                        <li><strong>📊 Overview</strong> — your protection status at a glance + 7-day activity chart.</li>
+                        <li><strong>🛡️ Rules</strong> — blocking mode, one-click categories, custom domains, and daily time limits.</li>
+                        <li><strong>⏰ Schedule</strong> — manage blocking windows and day-of-week settings.</li>
+                        <li><strong>⚙️ Settings</strong> — admin password, customization, SafeSearch, uninstall alerts, and support.</li>
+                    </ul>
+                    <p style="margin-top: 0.75rem;">Your tab selection is remembered between visits, so you always land where you left off.</p>
+                </div>
+            </details>
+            <details class="faq-item">
                 <summary>Can my child uninstall the extension?</summary>
                 <div class="faq-content">
                     <p>Technically, any Chrome extension can be uninstalled unless enforced by Enterprise Policy.
                         However, KidsGuard includes <strong>Uninstall Notifications</strong>:</p>
                     <ul style="margin-top: 0.5rem; color: var(--text-muted); padding-left: 1.25rem;">
-                        <li><strong>Step 1:</strong> Set your email in the extension settings.</li>
+                        <li><strong>Step 1:</strong> Set your email in the Settings tab.</li>
                         <li><strong>Step 2 (First Time):</strong> You'll receive a confirmation email from
                             <em>FormSubmit</em>. You <strong>must</strong> click "Confirm" to activate the alerts.
                         </li>
@@ -474,7 +520,7 @@
             <details class="faq-item">
                 <summary>Can I limit how long my child spends on a specific site each day?</summary>
                 <div class="faq-content">
-                    <p>Yes — with <strong>Daily Time Limits</strong>. Set a minute cap for any site (e.g., youtube.com → 60 min/day). When the limit is hit, the site automatically blocks for the rest of the day and resets at midnight. You'll also receive a system notification when usage reaches 80% of the cap. As a parent, you can still grant a 30-minute temporary exception via the blocked page if needed.</p>
+                    <p>Yes — with <strong>Daily Time Limits</strong> in the Rules tab. Set a minute cap for any site (e.g., youtube.com → 60 min/day). When the limit is hit, the site automatically blocks for the rest of the day and resets at midnight. You'll also receive a system notification when usage reaches 80% of the cap. As a parent, you can still grant a 30-minute temporary exception via the blocked page if needed.</p>
                 </div>
             </details>
             <details class="faq-item">
@@ -488,7 +534,7 @@
     <section class="cta-banner">
         <div class="cta-banner-inner">
             <h2>Give your family a safer internet today.</h2>
-            <p>Free to install. No account. No credit card. Works in 3 minutes.</p>
+            <p>Free to install. No account. No credit card. Set up in under a minute.</p>
             <a href="https://chromewebstore.google.com/detail/kidsguard-parental-contro/gaooofmcgnnkhogbokecnledmpgdfkip"
                 target="_blank" class="btn btn-primary btn-large" id="bottom-cta">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">

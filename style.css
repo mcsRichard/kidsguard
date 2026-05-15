@@ -1025,3 +1025,71 @@ body {
         align-items: center;
     }
 }
+
+/* ── v1.7 landing additions ──────────────────────────────── */
+
+.badge-new {
+    background: linear-gradient(to right, #10b981, #14b8a6);
+    color: white;
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 6px;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Tab showcase inside feature card */
+.tab-showcase {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 1.25rem;
+}
+
+.tab-pill {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 0.4rem 0.85rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+.tab-pill-active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+/* Hero popup tab bar mock */
+.popup-tabs-mock {
+    display: flex;
+    gap: 2px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 3px;
+    margin: 0.5rem 0;
+}
+
+.ptab-mock {
+    flex: 1;
+    text-align: center;
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 4px 2px;
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.45);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ptab-active {
+    background: var(--primary);
+    color: white;
+}
