@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KidsGuard – Free Parental Control Chrome Extension</title>
     <meta name="description"
-        content="KidsGuard is a free Chrome extension for parents. Block harmful sites, set daily time limits, enforce schedules, use temporary 30-min unlock, and protect settings with a tamper-proof password. Redesigned tabbed interface — set up in under a minute. No account required.">
+        content="KidsGuard is a free Chrome extension for parents. Block harmful sites, set daily time limits, enforce schedules, use temporary site unlock, and protect settings with a tamper-proof password. Tabbed interface with schedule presets — set up in under a minute. No account required.">
     <meta name="keywords"
         content="parental control chrome extension, website blocker for kids, block adult sites chrome, free parental control, screen time chrome, kids safe browser">
     <meta property="og:title" content="KidsGuard – Parental Control for Chrome">
@@ -77,7 +77,7 @@
         <div class="hero-content">
             <div class="hero-badge">
                 <span class="badge-dot"></span>
-                v1.7.0 — Redesigned Interface · Free Forever
+                v1.8 — Smarter UX · Free Forever
             </div>
             <h1 class="hero-title">
                 Keep Your Kids Safe<br>
@@ -189,11 +189,26 @@
 
         <div class="features-grid">
 
-            <!-- v1.7.0 HEADLINE FEATURE -->
+            <!-- v1.8 HEADLINE FEATURE -->
             <div class="feature-card feature-card-large" style="border-color: rgba(16,185,129,0.4); background: rgba(16,185,129,0.05);">
+                <div class="feature-icon">✨</div>
+                <h3>Smarter UX <span class="badge-new">NEW in 1.8</span></h3>
+                <p>Version 1.8 refines every parent–child interaction: clearer messages, friendlier language, and less friction at exactly the moments that matter.</p>
+                <ul style="margin-top: 1.25rem; color: var(--text-muted); font-size: 0.9rem; padding-left: 1.25rem;">
+                    <li style="margin-bottom: 0.5rem;"><strong>Clearer blocked page:</strong> Now shows exactly why a site is blocked — <em>"Blocked by a parent"</em> or <em>"Not in your approved list"</em> — so children understand without guessing.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Softer unlock flow:</strong> The temporary access button now reads <em>"🔓 Unlock (this visit)"</em> — kinder, less alarming language for kids.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Smarter popup:</strong> Detects when the current site is already blocked; shows the active schedule window or next activation time at a glance.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Schedule presets:</strong> Add common schedules in one tap — Study hours (08:00–15:00), Evening (18:00–21:00), or Weekends (10:00–20:00).</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Time limits show remaining time:</strong> Instead of "8/60 min used", now shows "52 min left today" for instant clarity.</li>
+                    <li><strong>Settings reorganised:</strong> Admin Password is now at the top where it belongs; cleaner layout with a password-active badge.</li>
+                </ul>
+            </div>
+
+            <!-- TABBED INTERFACE -->
+            <div class="feature-card feature-card-large">
                 <div class="feature-icon">🗂️</div>
-                <h3>Redesigned Interface <span class="badge-new">NEW in 1.7</span></h3>
-                <p>The settings page is completely reorganised into <strong>4 clear tabs</strong> so you always know where to look — no more scrolling through a long, confusing page.</p>
+                <h3>Tabbed Interface</h3>
+                <p>The settings page is organised into <strong>4 clear tabs</strong> so you always know where to look — no more scrolling through a long, confusing page.</p>
                 <div class="tab-showcase">
                     <div class="tab-pill tab-pill-active">📊 Overview</div>
                     <div class="tab-pill">🛡️ Rules</div>
@@ -203,15 +218,15 @@
                 <ul style="margin-top: 1.25rem; color: var(--text-muted); font-size: 0.9rem; padding-left: 1.25rem;">
                     <li style="margin-bottom: 0.5rem;"><strong>Overview tab:</strong> At-a-glance dashboard — current mode, active schedules, domain count, and your 7-day activity chart on one screen.</li>
                     <li style="margin-bottom: 0.5rem;"><strong>Rules tab:</strong> All blocking settings in one place — mode, one-click categories, custom domains, and daily time limits.</li>
-                    <li style="margin-bottom: 0.5rem;"><strong>Schedule tab:</strong> Dedicated space to manage your blocking windows and day selections.</li>
-                    <li><strong>Settings tab:</strong> Password, advanced controls, and alerts — clearly separated from your daily-use controls.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Schedule tab:</strong> Live status indicator shows whether blocking is active right now or paused, plus one-tap preset templates.</li>
+                    <li><strong>Settings tab:</strong> Password, advanced controls, and alerts — Admin Password at the top for quick access.</li>
                 </ul>
             </div>
 
             <!-- WIZARD -->
             <div class="feature-card">
                 <div class="feature-icon">🧭</div>
-                <h3>First-Time Setup Wizard <span class="badge-new">NEW in 1.7</span></h3>
+                <h3>First-Time Setup Wizard</h3>
                 <p>New users are greeted with a guided one-minute setup — pick what to block with a single tap and start protecting immediately. No manual configuration needed.</p>
             </div>
 
@@ -246,11 +261,11 @@
             <div class="feature-card feature-card-large">
                 <div class="feature-icon">🔓</div>
                 <h3>Temporary Site Access</h3>
-                <p>Need to grant a quick supervised exception? When a child hits the blocked page, an admin can enter their password directly there to unlock that specific site for <strong>30 minutes</strong> — without opening Settings.</p>
+                <p>Need to grant a quick supervised exception? When a child hits the blocked page, the page clearly explains why the site is blocked — then an admin can tap <strong>"🔓 Unlock (this visit)"</strong> and enter their password to grant access — without opening Settings.</p>
                 <ul style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem; padding-left: 1.25rem;">
                     <li style="margin-bottom: 0.5rem;">Works in both Blacklist and Whitelist mode.</li>
                     <li style="margin-bottom: 0.5rem;">Same brute-force lockout protection applies — wrong guesses lock the form.</li>
-                    <li>Site automatically re-blocks after 30 minutes with no action needed.</li>
+                    <li>Site re-blocks automatically after the visit with no action needed.</li>
                 </ul>
             </div>
 
@@ -462,12 +477,12 @@
             <details class="faq-item">
                 <summary>Where are my settings? I see tabs now.</summary>
                 <div class="faq-content">
-                    <p>KidsGuard v1.7.0 reorganised the settings page into <strong>4 tabs</strong> to make everything easier to find:</p>
+                    <p>KidsGuard organises settings into <strong>4 tabs</strong> to make everything easier to find:</p>
                     <ul style="margin-top: 0.5rem; color: var(--text-muted); padding-left: 1.25rem;">
                         <li><strong>📊 Overview</strong> — your protection status at a glance + 7-day activity chart.</li>
                         <li><strong>🛡️ Rules</strong> — blocking mode, one-click categories, custom domains, and daily time limits.</li>
-                        <li><strong>⏰ Schedule</strong> — manage blocking windows and day-of-week settings.</li>
-                        <li><strong>⚙️ Settings</strong> — admin password, customization, SafeSearch, uninstall alerts, and support.</li>
+                        <li><strong>⏰ Schedule</strong> — manage blocking windows, day-of-week settings, and one-tap preset templates.</li>
+                        <li><strong>⚙️ Settings</strong> — admin password (now at the top), customization, SafeSearch, uninstall alerts, and support.</li>
                     </ul>
                     <p style="margin-top: 0.75rem;">Your tab selection is remembered between visits, so you always land where you left off.</p>
                 </div>
@@ -514,13 +529,13 @@
             <details class="faq-item">
                 <summary>Can I temporarily allow a blocked site?</summary>
                 <div class="faq-content">
-                    <p>Yes — without opening Settings. When your child hits the KidsGuard blocked page, click <strong>"🔓 Unlock for 30 min"</strong> and enter your admin password. The site becomes accessible for exactly 30 minutes, then automatically re-blocks. The same brute-force lockout applies, so wrong guesses are rate-limited.</p>
+                    <p>Yes — without opening Settings. When your child hits the KidsGuard blocked page, the page shows exactly why the site is blocked. Click <strong>"🔓 Unlock (this visit)"</strong> and enter your admin password to grant access for that visit, then it automatically re-blocks. The same brute-force lockout applies, so wrong guesses are rate-limited.</p>
                 </div>
             </details>
             <details class="faq-item">
                 <summary>Can I limit how long my child spends on a specific site each day?</summary>
                 <div class="faq-content">
-                    <p>Yes — with <strong>Daily Time Limits</strong> in the Rules tab. Set a minute cap for any site (e.g., youtube.com → 60 min/day). When the limit is hit, the site automatically blocks for the rest of the day and resets at midnight. You'll also receive a system notification when usage reaches 80% of the cap. As a parent, you can still grant a 30-minute temporary exception via the blocked page if needed.</p>
+                    <p>Yes — with <strong>Daily Time Limits</strong> in the Rules tab. Set a minute cap for any site (e.g., youtube.com → 60 min/day). The popup shows remaining time ("52 min left today") so you always know how much is left at a glance. When the limit is hit, the site automatically blocks for the rest of the day and resets at midnight. You'll also receive a system notification when usage reaches 80% of the cap. As a parent, you can still grant a temporary exception via the blocked page if needed.</p>
                 </div>
             </details>
             <details class="faq-item">
