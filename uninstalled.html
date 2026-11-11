@@ -50,12 +50,20 @@
             margin-bottom: 2rem;
         }
 
-        .success-msg {
-            display: none;
-            color: var(--primary);
-            font-weight: 600;
-            margin-top: 1rem;
+        .status-box {
+            border-radius: 14px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
+
+        .status-ok { color: #6ee7b7; background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.35); }
+        .status-warn { color: #fde68a; background: rgba(234, 179, 8, 0.12); border-color: rgba(234, 179, 8, 0.35); }
+        .status-error { color: #fca5a5; background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.35); }
 
         .loading {
             display: inline-block;
@@ -83,57 +91,102 @@
 
 <body>
     <div class="container">
-        <div id="status">
-            <div class="loading"></div> Sending notification to parent...
+        <h1 id="title">KidsGuard Uninstalled</h1>
+
+        <!-- Result of the parent alert. Never claims "sent" before the mail service confirms it. -->
+        <div id="status" class="status-box">
+            <span class="loading"></span> <span id="statusText">Sending notification to parent…</span>
         </div>
 
-        <div id="content" style="display:none; margin-top: 2rem;">
-            <h1>KidsGuard Uninstalled</h1>
-            <p>Thank you for using KidsGuard. An alert has been sent to your parent's email address as configured in the settings.</p>
-            
-            <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid var(--primary); border-radius: 16px; padding: 1.5rem; margin-bottom: 2rem;">
-                <h3 style="margin-top: 0; color: var(--primary);">Help us improve!</h3>
-                <p style="margin-bottom: 1.5rem; font-size: 0.95rem;">Why did you uninstall KidsGuard? Your feedback helps us make the internet safer for everyone.</p>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSc5sBYJrj9jqk7a85owwdqYMmYD36CCcr_iNwKLWdq3QlrwhA/viewform?usp=sf_link" target="_blank" style="display: inline-block; background: var(--primary); color: white; padding: 0.75rem 1.5rem; border-radius: 12px; text-decoration: none; font-weight: 600;">Take a 30-second Survey</a>
-            </div>
-
-            <a href="index.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">Back to Homepage</a>
+        <div id="feedback" style="background: rgba(16, 185, 129, 0.1); border: 1px solid var(--primary); border-radius: 16px; padding: 1.5rem; margin-bottom: 2rem;">
+            <h3 style="margin-top: 0; color: var(--primary);">Help us improve!</h3>
+            <p style="margin-bottom: 1.5rem; font-size: 0.95rem;">Why did you uninstall KidsGuard? Your feedback helps us make the internet safer for everyone.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSc5sBYJrj9jqk7a85owwdqYMmYD36CCcr_iNwKLWdq3QlrwhA/viewform?usp=sf_link" target="_blank" style="display: inline-block; background: var(--primary); color: white; padding: 0.75rem 1.5rem; border-radius: 12px; text-decoration: none; font-weight: 600;">Take a 30-second Survey</a>
         </div>
 
-        <!-- Hidden form for FormSubmit -->
-        <form id="alertForm" action="https://formsubmit.co/ajax/REPLACE_WITH_EMAIL" method="POST" style="display:none;">
-            <input type="hidden" name="_subject" value="⚠️ Alert: KidsGuard has been uninstalled">
-            <input type="hidden" name="message"
-                value="This is an automated alert from KidsGuard. The extension has just been uninstalled from this browser.">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_captcha" value="false">
-        </form>
+        <a href="index.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">Back to Homepage</a>
     </div>
 
     <script>
+        // Modes:
+        //   ?email=…          the extension was uninstalled → alert the parent
+        //   ?email=…&test=1   opened from KidsGuard settings → send a test alert.
+        // The test is sent from this same page on purpose, so that activating the
+        // address with the mail service covers the real uninstall alert too.
         const urlParams = new URLSearchParams(window.location.search);
-        const parentEmail = urlParams.get('email');
+        const parentEmail = (urlParams.get('email') || '').trim();
+        const isTest = urlParams.get('test') === '1';
 
-        if (parentEmail) {
-            const form = document.getElementById('alertForm');
-            form.action = `https://formsubmit.co/ajax/${parentEmail}`;
+        const statusBox = document.getElementById('status');
+        const SEND_TIMEOUT_MS = 60000; // the mail service can take 30s+ to answer
 
-            fetch(form.action, {
-                method: "POST",
-                body: new FormData(form),
-                headers: { 'Accept': 'application/json' }
-            })
-                .then(response => {
-                    document.getElementById('status').style.display = 'none';
-                    document.getElementById('content').style.display = 'block';
-                })
-                .catch(error => {
-                    console.error("Error sending alert:", error);
-                    document.getElementById('status').innerHTML = "Failed to send alert. Please check your internet connection.";
+        function showStatus(kind, text) {
+            statusBox.className = 'status-box status-' + kind;
+            statusBox.textContent = text;
+        }
+
+        if (isTest) {
+            document.title = 'KidsGuard | Alert email test';
+            document.getElementById('title').textContent = 'Alert Email Test';
+            document.getElementById('feedback').style.display = 'none';
+            document.getElementById('statusText').textContent = 'Sending a test email to ' + parentEmail + '… this can take up to a minute.';
+        }
+
+        async function sendAlert() {
+            const controller = new AbortController();
+            const timer = setTimeout(() => controller.abort(), SEND_TIMEOUT_MS);
+            try {
+                const res = await fetch('https://formsubmit.co/ajax/' + encodeURIComponent(parentEmail), {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({
+                        _subject: isTest ? 'KidsGuard: alert email test' : '⚠️ Alert: KidsGuard has been uninstalled',
+                        message: isTest
+                            ? 'This is a test from KidsGuard. If you can read this, uninstall alerts will reach this address.'
+                            : 'This is an automated alert from KidsGuard. The extension has just been uninstalled from this browser.',
+                        _template: 'table',
+                        _captcha: 'false'
+                    }),
+                    keepalive: true, // let the request finish even if this tab is closed
+                    signal: controller.signal
                 });
+                const data = await res.json().catch(() => ({}));
+                const ok = res.ok && String(data.success) === 'true';
+                const needsActivation = /activat/i.test(data.message || '');
+
+                if (ok) {
+                    showStatus('ok', isTest
+                        ? 'Test email sent to ' + parentEmail + '. Alerts are working — check your inbox (and spam folder).'
+                        : 'An alert has been sent to the parent email address configured in the settings.');
+                } else if (needsActivation) {
+                    showStatus('warn', isTest
+                        ? 'One more step: we sent an activation email to ' + parentEmail + '. Open it and click "Activate Form" (check spam too), then run this test again. Alerts are not delivered until the address is activated.'
+                        : 'The alert could NOT be delivered: the parent email address was never activated. An activation email has been sent to it instead.');
+                } else {
+                    showStatus('error', 'The email could not be sent' + (data.message ? ': ' + data.message : '.'));
+                }
+            } catch (error) {
+                console.error('Error sending alert:', error);
+                showStatus('error', error.name === 'AbortError'
+                    ? 'The mail service did not answer in time, so we cannot confirm the email was sent.'
+                    : 'Failed to send the email. Please check your internet connection.');
+            } finally {
+                clearTimeout(timer);
+            }
+        }
+
+        // Reloading this page must not send the same alert again.
+        const sentKey = 'kg_alert_sent_' + (isTest ? 'test_' : '') + parentEmail;
+        let alreadySent = false;
+        try { alreadySent = sessionStorage.getItem(sentKey) === '1'; } catch (e) {}
+
+        if (parentEmail && alreadySent && !isTest) {
+            showStatus('info', 'The alert for this uninstall has already been sent to the parent email address.');
+        } else if (parentEmail) {
+            try { sessionStorage.setItem(sentKey, '1'); } catch (e) {}
+            sendAlert();
         } else {
-            document.getElementById('status').innerHTML = "No parent email configured. Redirecting...";
-            setTimeout(() => window.location.href = 'index.html', 3000);
+            showStatus('info', 'Thank you for using KidsGuard. No parent email was configured, so no alert was sent.');
         }
     </script>
 </body>
