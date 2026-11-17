@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy – KidsGuard</title>
+    <meta name="description"
+        content="KidsGuard privacy policy: what the extension stores on your computer, what (little) leaves it, and why it needs the permissions it asks for.">
+    <link rel="canonical" href="https://mcsrichard.github.io/kidsguard/privacy.html">
+    <link rel="icon" href="assets/icon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .policy {
+            max-width: 800px;
+            margin: 120px auto 60px;
+            padding: 0 20px;
+            line-height: 1.75;
+            color: #e2e8f0;
+        }
+        .policy h1 { font-size: 2.6rem; font-weight: 800; line-height: 1.2; margin-bottom: 12px; }
+        .policy h2 { font-size: 1.4rem; color: #10b981; margin: 40px 0 14px; }
+        .policy p, .policy li { font-size: 1.05rem; }
+        .policy p { margin-bottom: 16px; }
+        .policy ul { margin: 0 0 20px; padding-left: 22px; }
+        .policy li { margin-bottom: 8px; }
+        .policy code { background: rgba(255,255,255,0.08); padding: 1px 6px; border-radius: 4px; font-size: 0.95em; }
+        .policy .summary {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid #10b981;
+            padding: 18px 22px;
+            margin: 28px 0;
+            border-radius: 0 12px 12px 0;
+        }
+        .policy table { width: 100%; border-collapse: collapse; margin: 0 0 20px; font-size: 0.98rem; }
+        .policy th, .policy td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--border); }
+        .policy th { color: #94a3b8; font-weight: 600; }
+        .policy .table-wrap { overflow-x: auto; }
+        @media (max-width: 768px) { .policy h1 { font-size: 2rem; } }
+    </style>
+</head>
+
+<body>
+
+    <nav class="nav" id="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">🛡️</span>
+                <span>KidsGuard</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html#features">Features</a>
+                <a href="index.html#faq">FAQ</a>
+                <a href="blog-how-to-block-bloxd-io.html">Blog</a>
+            </div>
+            <a href="https://chromewebstore.google.com/detail/kidsguard-parental-contro/gaooofmcgnnkhogbokecnledmpgdfkip"
+                target="_blank" class="btn btn-nav" id="nav-cta">
+                Add to Chrome — Free
+            </a>
+        </div>
+    </nav>
+
+    <main class="policy">
+        <h1 class="gradient-text">Privacy Policy</h1>
+        <p style="color: var(--text-muted);">Applies to the KidsGuard browser extension. Last updated: November 17, 2026.</p>
+
+        <div class="summary">
+            <strong>In short:</strong> KidsGuard has no accounts and no servers of its own. Your settings and your child's
+            usage stay in Chrome on your computer. We do not collect, sell or share browsing history. The only thing that
+            ever leaves your computer is the parent email address you choose to enter, and only to send you an alert.
+        </div>
+
+        <h2>What KidsGuard stores, and where</h2>
+        <div class="table-wrap">
+            <table>
+                <tr><th>Data</th><th>Where it is kept</th></tr>
+                <tr>
+                    <td>Your settings: blocked or allowed sites, schedules, time limits, blocked-page message, on/off switches</td>
+                    <td>Chrome's extension storage (<code>chrome.storage.sync</code>). If you are signed in to Chrome with sync on, Google syncs it between your own devices.</td>
+                </tr>
+                <tr>
+                    <td>Admin password and recovery code</td>
+                    <td>Same place, as a one-way salted hash. The password itself is never stored.</td>
+                </tr>
+                <tr>
+                    <td>Parent email address (optional)</td>
+                    <td>Same place. See "Uninstall alerts" below for when it is sent.</td>
+                </tr>
+                <tr>
+                    <td>Today's time spent per website (for time limits and the "Today" view) and the count of blocked visits</td>
+                    <td>Only on this computer (<code>chrome.storage.local</code>). It is never uploaded.</td>
+                </tr>
+            </table>
+        </div>
+        <p>You can remove all of it at any time by uninstalling the extension.</p>
+
+        <h2>What leaves your computer</h2>
+        <p>Only the parent email address, and only in these two cases:</p>
+        <ul>
+            <li><strong>Test email.</strong> When you save a parent email in settings, KidsGuard opens a page that sends a
+                test message to that address, so you can confirm alerts will arrive.</li>
+            <li><strong>Uninstall alert.</strong> If the extension is removed, Chrome opens an alert page that emails you
+                about it.</li>
+        </ul>
+        <p>In both cases the page is hosted on GitHub Pages (<code>mcsrichard.github.io</code>), and the email is delivered
+            through <a href="https://formsubmit.co" target="_blank" rel="noopener">FormSubmit</a>. Both services
+            receive your email address to do this, and GitHub may record the page request in its server logs. The message
+            contains only the alert text and the time — no browsing data. If you do not enter an email, nothing is sent.</p>
+
+        <h2>What we never do</h2>
+        <ul>
+            <li>No analytics, tracking pixels, advertising or third-party scripts in the extension.</li>
+            <li>No browsing history, page contents, keystrokes or screenshots are collected or sent anywhere.</li>
+            <li>No data is sold, rented or shared for marketing.</li>
+        </ul>
+
+        <h2>Why KidsGuard asks for its permissions</h2>
+        <ul>
+            <li><strong>Read and change data on all websites</strong> (<code>&lt;all_urls&gt;</code>): to block any
+                site you add, apply SafeSearch on search engines, and hide YouTube Shorts on youtube.com. Blocking
+                decisions are made inside Chrome; page contents are not collected or sent anywhere.</li>
+            <li><strong>Tabs and web navigation</strong>: to know which site is open, so time limits can be counted and
+                applied, and so a site that runs out of time is blocked straight away.</li>
+            <li><strong>declarativeNetRequest</strong>: Chrome's built-in way to block sites.</li>
+            <li><strong>Idle</strong>: to stop counting screen time when nobody is using the computer.</li>
+            <li><strong>Storage, alarms, notifications</strong>: to save settings, check limits every minute, and warn
+                before time runs out.</li>
+        </ul>
+
+        <h2>Children's privacy</h2>
+        <p>KidsGuard is set up and controlled by a parent or guardian. It does not ask children for any personal
+            information and sends nothing about them off the computer.</p>
+
+        <h2>Changes to this policy</h2>
+        <p>If a future version starts sending any new data (for example an optional weekly email report), this page
+            will be updated first and the feature will be off until you turn it on.</p>
+
+        <h2>Contact</h2>
+        <p>Questions: <a href="mailto:yxiaonan@hotmail.com?subject=KidsGuard%20Privacy">yxiaonan@hotmail.com</a></p>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="logo-icon">🛡️</span>
+                <span><strong>KidsGuard</strong> © 2026</span>
+            </div>
+            <div class="footer-links">
+                <a href="mailto:yxiaonan@hotmail.com?subject=KidsGuard%20Feedback">Contact &amp; Feedback</a>
+                <a href="index.html#faq">FAQ</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="https://chromewebstore.google.com/detail/kidsguard-parental-contro/gaooofmcgnnkhogbokecnledmpgdfkip"
+                    target="_blank">Chrome Web Store</a>
+            </div>
+            <p class="footer-note">Built with ❤️ for families. KidsGuard is not affiliated with Google.</p>
+        </div>
+    </footer>
+
+    <script>
+        const nav = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('nav-scrolled', window.scrollY > 20);
+        });
+    </script>
+</body>
+
+</html>
